@@ -482,24 +482,20 @@ async function handleRSVP() {
   document.getElementById('rsvp-success').classList.add('show');
 }
   <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyA8gtW9KfHua3ZIYZAmL3nj6GxKdCJ_YAc",
-    authDomain: "invitation-38a5f.firebaseapp.com",
-    projectId: "invitation-38a5f",
-    storageBucket: "invitation-38a5f.firebasestorage.app",
-    messagingSenderId: "311504448729",
-    appId: "1:311504448729:web:e68e4b1d0a29ad896722c8"
-  };
+const firebaseConfig = {
+  apiKey: "AIzaSyA8gtW9KfHua3ZIYZAmL3nj6GxKdCJ_YAc",
+  authDomain: "invitation-38a5f.firebaseapp.com",
+  projectId: "invitation-38a5f",
+  storageBucket: "invitation-38a5f.firebasestorage.app",
+  messagingSenderId: "311504448729",
+  appId: "1:311504448729:web:e68e4b1d0a29ad896722c8"
+};
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-</script>
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 </script>
 </body>
 </html>
