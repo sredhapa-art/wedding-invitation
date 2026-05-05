@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #fffaf5;
+  color: #333;
+  text-align: center;
+}
+
+.hero {
+  padding: 100px 20px;
+  background: #ffe4ec;
+}
+
+h1 {
+  font-family: serif;
+  font-size: 48px;
+}
+
+.date {
+  color: #4caf50;
+}
+
+section {
+  padding: 60px 20px;
+}
