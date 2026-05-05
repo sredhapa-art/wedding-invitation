@@ -309,68 +309,6 @@ footer{background:var(--text-dark);color:rgba(250,246,239,.7);text-align:center;
 </section>
 
 <!-- ── RSVP ── -->  
-  "use client";
-
-import { db } from "@/lib/firebase";
-import { collection, addDoc } from "firebase/firestore";
-
-export default function RSVPForm() {
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
-    const form = e.target;
-
-    const data = {
-      firstName: form.firstName.value,
-      lastName: form.lastName.value,
-      email: form.email.value,
-      guests: form.guests.value,
-      events: Array.from(form.querySelectorAll('input[name="events"]:checked')).map((el: any) => el.value),
-      dietary: form.dietary.value,
-      note: form.note.value,
-      createdAt: new Date()
-    };
-
-    try {
-      await addDoc(collection(db, "rsvps"), data);
-      alert("RSVP submitted!");
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      alert("Error submitting form");
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input name="firstName" placeholder="First Name" />
-      <input name="lastName" placeholder="Last Name" />
-      <input name="email" placeholder="Email" />
-      <select name="guests">
-        <option value="">Guests</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-      </select>
-
-      <label>
-        <input type="checkbox" name="events" value="ceremony" />
-        Ceremony
-      </label>
-
-      <label>
-        <input type="checkbox" name="events" value="reception" />
-        Reception
-      </label>
-
-      <textarea name="dietary" placeholder="Dietary notes" />
-      <textarea name="note" placeholder="Message" />
-
-      <button type="submit">Confirm Attendance</button>
-    </form>
-  );
-}
-
-        
 <section class="rsvp-section" id="rsvp">
   <div class="section-intro fade-up">
     <p class="caption">Will you join us?</p>
