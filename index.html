@@ -461,7 +461,7 @@ window.handleRSVP = async function () {
   const firstName = document.getElementById('fname').value.trim();
   const lastName  = document.getElementById('lname').value.trim();
   const email     = document.getElementById('email').value.trim();
-
+  const guests    = document.getElementById('guests').value;
   const events = [];
   if (document.getElementById('ev1c').checked) events.push("ceremony");
   if (document.getElementById('ev2c').checked) events.push("reception");
