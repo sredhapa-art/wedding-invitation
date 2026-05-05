@@ -323,6 +323,16 @@ footer{background:var(--text-dark);color:rgba(250,246,239,.7);text-align:center;
         <div class="form-group"><label class="form-label" for="lname">Last name</label><input class="form-input" type="text" id="lname" placeholder="Family name" autocomplete="family-name"></div>
       </div>
       <div class="form-group"><label class="form-label" for="email">Email address</label><input class="form-input" type="email" id="email" placeholder="your@email.com" autocomplete="email"></div>
+        <div class="form-group"><label class="form-label" for="guests">Number of guests</label>
+        <select class="form-select" id="guests">
+          <option value="">Select guests</option>
+          <option>1 — Just me</option>
+          <option>2 — Myself &amp; partner</option>
+          <option>3 — Family of three</option>
+          <option>4 — Family of four</option>
+          <option>5+ — Larger group</option>
+        </select>
+      </div>
       <div class="form-group"><label class="form-label">Events attending</label>
         <div class="rsvp-radio-group">
           <div class="radio-option"><input type="checkbox" id="ev1c"><label for="ev1c">Wedding Ceremony</label></div>
@@ -480,6 +490,7 @@ window.handleRSVP = async function () {
       lastName,
       email,
       events,
+      guests,
       dietary,
       note,
       createdAt: new Date()
