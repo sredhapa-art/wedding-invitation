@@ -327,6 +327,11 @@ section { padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem); }
   transition: opacity .2s;
 }
 .event-card .map-link:hover { opacity: .7; }
+.event-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
 
 /* ── Countdown ── */
 .countdown-section { text-align: center; 
@@ -568,6 +573,7 @@ footer {
   <div class="events-grid">
 
     <!-- Wedding / Kalyanam -->
+    <a href="events.html" class="event-card-link">
     <div class="event-card fade-up">
       <div class="event-icon">
         <img src="assets/thali-icon.svg" alt="" width="30" height="30">
@@ -584,8 +590,10 @@ footer {
         View on map
       </a>
     </div>
+    </a>
 
     <!-- Reception -->
+    <a href="events.html" class="event-card-link">
     <div class="event-card fade-up d1">
       <div class="event-icon">
         <img src="assets/reception-icon.svg" alt="" width="24" height="24">
@@ -602,6 +610,7 @@ footer {
         View on map
       </a>
     </div>
+    </a>
 
   </div>
 </section>
