@@ -246,8 +246,13 @@ section { padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem); }
 }
 .hero-parrot {
   position: absolute; width: clamp(120px, 14vw, 235px);
-  height: auto; pointer-events: none; z-index: 0;
+  height: auto; pointer-events: auto; z-index: 0;
   mix-blend-mode: darken;
+  transition: transform .4s ease;
+  cursor: pointer;
+}
+.hero-parrot:hover {
+  transform: translateY(-6px);
 }
 .hero-parrot-left {
   left: 10%; top: 22%;
