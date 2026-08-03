@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — Sredha &amp; Pranav Wedding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ── Events page specific styles ── */
+
+  /* Main events content area */
+  .events-page-main {
+    position: relative;
+    padding: 10rem clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem);
+    overflow: hidden;
+  }
+
+  /* Leaf decoration */
+  .events-leaf-decor {
+    position: absolute;
+    left: -2%;
+    top: calc(-3% + 64px);
+    width: clamp(250px, 28vw, 470px);
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: darken;
+    transform: none;
+  }
+
+  .events-page-inner {
+    max-width: 580px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Event block */
+  .event-block {
+    margin-bottom: 0;
+  }
+  .event-block h2 {
+    font-family: var(--display);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-dark);
+    margin-bottom: .25rem;
+  }
+  .event-block .event-date {
+    font-family: var(--display);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--gold-dark);
+    font-style: italic;
+    margin: .75rem 0;
+  }
+  .event-block address {
+    font-style: normal;
+    font-size: .88rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-top: .25rem;
+  }
+  .event-block .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    font-size: .75rem;
+    letter-spacing: .08em;
+    color: var(--green-deep);
+    text-decoration: none;
+    margin-top: .75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: opacity .2s;
+  }
+  .event-block .map-link:hover { opacity: .7; }
+  .event-block .event-desc {
+    color: var(--text-mid);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  /* What to wear sub-section */
+  .what-to-wear {
+    margin-top: 2rem;
+  }
+  .what-to-wear .caption {
+    margin-bottom: .75rem;
+  }
+  .what-to-wear p {
+    color: var(--text-mid);
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: center;
+  }
+
+  /* Section divider between events */
+  .events-section-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: clamp(3rem, 6vw, 5rem) auto;
+  }
+
+  /* Wave transition between events and gift section */
+  .events-wave-transition {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -1px;
+  }
+  .events-wave-transition img {
+    width: 105%;
+    height: auto;
+    display: block;
+    margin-left: -2.5%;
+  }
+
+  /* Gift section */
+  .gift-section {
+    background: #FFFDF7;
+    text-align: center;
+    padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem);
+  }
+  .gift-content {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  .gift-content .gift-desc {
+    color: var(--text-mid);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-top: 1rem;
+  }
+  .gift-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .gift-buttons .btn {
+    min-width: 166px;
+  }
+
+  /* UPI toast notification */
+  .upi-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--text-dark);
+    color: var(--cream);
+    padding: .75rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-size: .85rem;
+    font-weight: 400;
+    letter-spacing: .04em;
+    z-index: 200;
+    opacity: 0;
+    transition: transform .4s ease, opacity .4s ease;
+    pointer-events: none;
+  }
+  .upi-toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+
+  @media (max-width: 720px) {
+    .events-leaf-decor {
+      width: 200px;
+      top: 0;
+      left: -5%;
+    }
+    .gift-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Navbar ── -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-s">S</span>
+    <span class="nav-logo-amp">&amp;</span>
+    <span class="nav-logo-p">P</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="events.html">Events</a></li>
+    <li><a href="index.html#countdown">Countdown</a></li>
+    <li><a href="index.html#rsvp">RSVP</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile-overlay" id="mobileNav">
+  <a href="events.html" onclick="closeMobileNav()">Events</a>
+  <a href="index.html#countdown" onclick="closeMobileNav()">Countdown</a>
+  <a href="index.html#rsvp" onclick="closeMobileNav()">RSVP</a>
+</div>
+
+<!-- ── Events Main Content ── -->
+<section class="events-page-main">
+  <!-- Leaf decoration (left side) -->
+  <img src="assets/leaf-decor.png" class="events-leaf-decor" alt="" aria-hidden="true">
+
+  <div class="events-page-inner">
+
+    <!-- ── Kalyanam ── -->
+    <div class="event-block fade-up">
+      <p class="caption">Join us for</p>
+      <div class="divider"></div>
+      <h2>Kalyanam</h2>
+      <p class="event-date">24th October, 2026</p>
+      <address>
+        Krishnakripa Kalyana Mandapam<br>
+        Vadakara, Kerala
+      </address>
+      <a href="https://maps.google.com/?q=Krishnakripa+Kalyana+Mandapam+Vadakara" target="_blank" class="map-link">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.2 1 3 3.2 3 6 3 9.8 8 15 8 15s5-5.2 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z" fill="currentColor"/></svg>
+        View on map
+      </a>
+      <p class="event-desc">Join us for our special moment as we tie the knot amidst the rhythm of traditional percussion and the fragrance of jasmines. Afterwards, we invite your taste buds to a grand Kerala Sadhya — a festive vegetarian feast served on a banana leaf.</p>
+
+      <div class="what-to-wear fade-up">
+        <p class="caption">What to wear</p>
+        <p>Find your comfort in traditional Indian attire or festive wear. Think <em>sarees</em>, <em>pattar namaz</em>, <em>lehengas</em>, or Indo-Western fusion for the ladies, and <em>kurta/shirts</em> with <em>mundu/dhoti/trousers</em> for the men.</p>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="events-section-divider"></div>
+
+    <!-- ── Reception ── -->
+    <div class="event-block fade-up">
+      <h2>Reception</h2>
+      <p class="event-date">25th October, 2026</p>
+      <address>
+        Mascot Beach Resort<br>
+        Kannur, Kerala
+      </address>
+      <a href="https://maps.app.goo.gl/yyznt61GRwa8fZTb8" target="_blank" class="map-link">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.2 1 3 3.2 3 6 3 9.8 8 15 8 15s5-5.2 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z" fill="currentColor"/></svg>
+        View on map
+      </a>
+      <p class="event-desc">As the sun sets over the Arabian Sea, we will gather to continue the celebrations in a relaxed and joyful atmosphere. Expect a night filled with wonderful conversations, plenty of photographs, a delicious buffet and great music. And of course, beautiful memories to take home.</p>
+
+      <div class="what-to-wear fade-up">
+        <p class="caption">What to wear</p>
+        <p>For an evening by the sea, bring your dazzling best. Think <em>sarees</em>, dresses, gowns, or <em>lehengas</em> for the ladies and suits, <em>sherwanis</em> or smart casuals for the men.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Wave transition -->
+<div class="events-wave-transition" aria-hidden="true">
+  <img src="assets/wave-events.png" alt="">
+</div>
+
+<!-- ── Your Presence Is Our Gift ── -->
+<section class="gift-section">
+  <div class="gift-content fade-up">
+    <p class="caption">What to bring</p>
+    <div class="divider"></div>
+    <h2>Your Presence Is Our Gift</h2>
+    <p class="gift-desc">Your presence, love, and the effort you are making to join us are truly the greatest gifts we could ask for. If you would still like to celebrate our next chapter with an extra treat, a contribution towards our honeymoon adventures would be warmly welcomed.</p>
+    <div class="gift-buttons">
+      <a href="https://www.paypal.com/paypalme/PranavPreman92" target="_blank" class="btn btn-secondary">PayPal</a>
+      <button class="btn btn-secondary" id="copy-upi-btn" onclick="copyUPI()">Copy UPI ID</button>
+    </div>
+  </div>
+</section>
+
+<!-- UPI Toast -->
+<div class="upi-toast" id="upi-toast">UPI ID copied to clipboard!</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <p class="footer-names">Sredha &amp; Pranav</p>
+  <p class="footer-date">24 · 10 · 2026 &nbsp;—&nbsp; Kerala</p>
+  <p class="footer-note">"Like the parakeet that returns to its branch each dusk, so does the heart find its home in those it loves."</p>
+  <ul class="footer-links">
+    <li><a href="events.html">Events</a></li>
+    <li><a href="index.html#rsvp">RSVP</a></li>
+  </ul>
+  <p class="footer-copy">Crafted with love &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; 2026</p>
+</footer>
+
+<script>
+/* Navbar scroll */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar')
+    .classList.toggle('scrolled', window.scrollY > 30);
+});
+
+/* Mobile nav */
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+let navOpen = false;
+
+hamburger.addEventListener('click', () => {
+  navOpen = !navOpen;
+  mobileNav.classList.toggle('open', navOpen);
+  document.body.style.overflow = navOpen ? 'hidden' : '';
+});
+
+window.closeMobileNav = function () {
+  navOpen = false;
+  mobileNav.classList.remove('open');
+  document.body.style.overflow = '';
+};
+
+/* Scroll animation */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+/* Copy UPI ID */
+window.copyUPI = function () {
+  const upiId = 'pranavpreman@upi';
+  navigator.clipboard.writeText(upiId).then(() => {
+    const toast = document.getElementById('upi-toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+  }).catch(() => {
+    prompt('Copy this UPI ID:', upiId);
+  });
+};
+</script>
+
+</body>
+</html>
