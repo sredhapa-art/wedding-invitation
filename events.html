@@ -322,52 +322,7 @@ footer {
   margin: clamp(3rem, 6vw, 5rem) auto;
 }
 
-.gift-section {
-  background: #FFFDF7;
-  text-align: center;
-  padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem);
-}
-.gift-content {
-  max-width: 580px;
-  margin: 0 auto;
-}
-.gift-content .gift-desc {
-  color: var(--text-mid);
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-top: 1rem;
-}
-.gift-buttons {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-.gift-buttons .btn {
-  min-width: 166px;
-}
-.upi-toast {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(100px);
-  background: var(--text-dark);
-  color: var(--cream);
-  padding: .75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-size: .85rem;
-  font-weight: 400;
-  letter-spacing: .04em;
-  z-index: 200;
-  opacity: 0;
-  transition: transform .4s ease, opacity .4s ease;
-  pointer-events: none;
-}
-.upi-toast.show {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-}
+
 
 @media (max-width: 720px) {
   .events-leaf-decor {
@@ -375,10 +330,7 @@ footer {
     top: 0;
     left: -5%;
   }
-  .gift-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+
 }
 </style>
 </head>
@@ -460,23 +412,6 @@ footer {
 </section>
 
 
-<!-- ── Your Presence Is Our Gift ── -->
-<section class="gift-section">
-  <div class="gift-content fade-up">
-    <p class="caption">What to bring</p>
-    <div class="divider"></div>
-    <h2>Your Presence Is Our Gift</h2>
-    <p class="gift-desc">Your presence, love, and the effort you are making to join us are truly the greatest gifts we could ask for. If you would still like to celebrate our next chapter with an extra treat, a contribution towards our honeymoon adventures would be warmly welcomed.</p>
-    <div class="gift-buttons">
-      <a href="https://www.paypal.com/paypalme/PranavPreman92" target="_blank" class="btn btn-secondary">PayPal</a>
-      <button class="btn btn-secondary" id="copy-upi-btn" onclick="copyUPI()">Copy UPI ID</button>
-    </div>
-  </div>
-</section>
-
-<!-- UPI Toast -->
-<div class="upi-toast" id="upi-toast">UPI ID copied to clipboard!</div>
-
 <!-- ── Footer ── -->
 <footer>
   <p class="footer-names">Sredha &amp; Pranav</p>
@@ -525,16 +460,6 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-/* Copy UPI ID */
-window.copyUPI = function () {
-  const upiId = 'sredhapavithran.mec@okaxis';
-  navigator.clipboard.writeText(upiId).then(() => {
-    const toast = document.getElementById('upi-toast');
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 2500);
-  }).catch(() => {
-    prompt('Copy this UPI ID:', upiId);
-  });
 };
 </script>
 
