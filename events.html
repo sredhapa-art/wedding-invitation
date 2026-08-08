@@ -10,108 +10,108 @@
 <style>
 /* ── Font Face ── */
 @font-face {
-  font-family: 'Adogare';
-  src: url('fonts/Adogare.otf') format('opentype');
-  font-weight: 100 900;
-  font-style: normal italic;
-  font-display: swap;
+font-family: 'Adogare';
+src: url('fonts/Adogare.otf') format('opentype');
+font-weight: 100 900;
+font-style: normal italic;
+font-display: swap;
 }
 
 /* ── Variables ── */
 :root {
-  --cream: #FAF6EF;
-  --cream-deep: #F2EBD9;
-  --pink: #F4C2C2;
-  --pink-mid: #E8A0A0;
-  --pink-deep: #C97B7B;
-  --maroon: #902D2A;
-  --green: #6DBF7E;
-  --green-mid: #4FA862;
-  --green-deep: #2E7A44;
-  --gold: #C8A96A;
-  --gold-dark: #BA9548;
-  --gold-light: #E8D5A8;
-  --gold-line: #E1851C;
-  --text-dark: #2C2420;
-  --text-mid: #6B5B52;
-  --text-light: #A09080;
-  --border: rgba(200,169,106,.25);
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --display: 'Adogare', 'Playfair Display', Georgia, serif;
-  --sans: 'DM Sans', system-ui, sans-serif;
-  --radius-md: 12px;
-  --radius-lg: 24px;
-  --radius-pill: 999px;
+--cream: #FAF6EF;
+--cream-deep: #F2EBD9;
+--pink: #F4C2C2;
+--pink-mid: #E8A0A0;
+--pink-deep: #C97B7B;
+--maroon: #902D2A;
+--green: #6DBF7E;
+--green-mid: #4FA862;
+--green-deep: #2E7A44;
+--gold: #C8A96A;
+--gold-dark: #BA9548;
+--gold-light: #E8D5A8;
+--gold-line: #E1851C;
+--text-dark: #2C2420;
+--text-mid: #6B5B52;
+--text-light: #A09080;
+--border: rgba(200,169,106,.25);
+--serif: 'Cormorant Garamond', Georgia, serif;
+--display: 'Adogare', 'Playfair Display', Georgia, serif;
+--sans: 'DM Sans', system-ui, sans-serif;
+--radius-md: 12px;
+--radius-lg: 24px;
+--radius-pill: 999px;
 }
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--cream);
-  color: var(--text-dark);
-  font-family: var(--sans);
-  font-weight: 300;
-  line-height: 1.7;
-  overflow-x: hidden;
+background: var(--cream);
+color: var(--text-dark);
+font-family: var(--sans);
+font-weight: 300;
+line-height: 1.7;
+overflow-x: hidden;
 }
 
 /* ── Typography ── */
 h1 {
-  font-family: var(--display);
-  font-size: clamp(3rem, 8vw, 6.125rem);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: 2px;
-  color: var(--maroon);
+font-family: var(--display);
+font-size: clamp(3rem, 8vw, 6.125rem);
+font-weight: 400;
+line-height: 1.05;
+letter-spacing: 2px;
+color: var(--maroon);
 }
 h2 {
-  font-family: var(--display);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 400;
-  line-height: 1.15;
-  color: var(--text-dark);
+font-family: var(--display);
+font-size: clamp(2rem, 5vw, 3.5rem);
+font-weight: 400;
+line-height: 1.15;
+color: var(--text-dark);
 }
 h3 {
-  font-family: var(--serif);
-  font-size: clamp(1.3rem, 3vw, 1.75rem);
-  font-weight: 400;
-  line-height: 1.3;
+font-family: var(--serif);
+font-size: clamp(1.3rem, 3vw, 1.75rem);
+font-weight: 400;
+line-height: 1.3;
 }
 .caption {
-  font-size: .78rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: var(--text-mid);
+font-size: .78rem;
+letter-spacing: .12em;
+text-transform: uppercase;
+font-weight: 500;
+color: var(--text-mid);
 }
 .italic { font-style: italic; }
 
 /* ── Shared ── */
 section { padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem); }
 .divider {
-  width: 60px; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 2rem auto;
+width: 60px; height: 1px;
+background: linear-gradient(90deg, transparent, var(--gold), transparent);
+margin: 2rem auto;
 }
 .divider-sm {
-  width: 36px; height: 1px;
-  background: var(--gold-light);
-  margin: 1.25rem auto;
+width: 36px; height: 1px;
+background: var(--gold-light);
+margin: 1.25rem auto;
 }
 .section-intro {
-  max-width: 580px; margin: 0 auto; text-align: center;
+max-width: 580px; margin: 0 auto; text-align: center;
 }
 .section-intro h2 { margin-bottom: 1rem; }
 .section-desc {
-  color: var(--text-mid); font-size: 1rem; line-height: 1.8;
-  margin-top: 1rem;
+color: var(--text-mid); font-size: 1rem; line-height: 1.8;
+margin-top: 1rem;
 }
 
 /* ── Animations ── */
 .fade-up {
-  opacity: 0; transform: translateY(28px);
-  transition: opacity .8s ease, transform .8s ease;
+opacity: 0; transform: translateY(28px);
+transition: opacity .8s ease, transform .8s ease;
 }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 .fade-up.d1 { transition-delay: .15s; }
@@ -121,214 +121,264 @@ section { padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem); }
 
 /* ── Navbar ── */
 .navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 1.25rem clamp(1.5rem, 5vw, 4rem);
-  display: flex; align-items: center; justify-content: space-between;
-  background: rgba(250,246,239,.9);
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
-  transition: border-color .3s;
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+padding: 1.25rem clamp(1.5rem, 5vw, 4rem);
+display: flex; align-items: center; justify-content: space-between;
+background: rgba(250,246,239,.9);
+backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+border-bottom: 1px solid transparent;
+transition: border-color .3s;
 }
 .navbar.scrolled { border-bottom-color: var(--border); }
 .nav-logo {
-  display: flex; align-items: baseline; gap: 2px;
-  text-decoration: none; color: var(--maroon);
+display: flex; align-items: baseline; gap: 2px;
+text-decoration: none; color: var(--maroon);
 }
 .nav-logo-s, .nav-logo-p {
-  font-family: var(--display);
-  font-size: 1.1rem; font-weight: 400;
-  letter-spacing: -0.07em;
+font-family: var(--display);
+font-size: 1.1rem; font-weight: 400;
+letter-spacing: -0.07em;
 }
 .nav-logo-amp {
-  font-family: var(--serif);
-  font-size: 1.3rem; font-weight: 300;
-  font-style: italic; color: var(--maroon);
+font-family: var(--serif);
+font-size: 1.3rem; font-weight: 300;
+font-style: italic; color: var(--maroon);
 }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a {
-  font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--text-mid); text-decoration: none; font-weight: 400;
-  transition: color .25s;
+font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
+color: var(--text-mid); text-decoration: none; font-weight: 400;
+transition: color .25s;
 }
 .nav-links a:hover { color: var(--text-dark); }
 .nav-hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  cursor: pointer; background: none; border: none; padding: 4px;
+display: none; flex-direction: column; gap: 5px;
+cursor: pointer; background: none; border: none; padding: 4px;
 }
 .nav-hamburger span {
-  display: block; width: 22px; height: 1px; background: var(--text-dark);
+display: block; width: 22px; height: 1px; background: var(--text-dark);
 }
 .nav-mobile-overlay {
-  display: none; position: fixed; inset: 0;
-  background: var(--cream); z-index: 99;
-  flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+display: none; position: fixed; inset: 0;
+background: var(--cream); z-index: 99;
+flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
 }
 .nav-mobile-overlay.open { display: flex; }
 .nav-mobile-overlay a {
-  font-family: var(--serif); font-size: 2rem; font-weight: 300;
-  color: var(--text-dark); text-decoration: none;
+font-family: var(--serif); font-size: 2rem; font-weight: 300;
+color: var(--text-dark); text-decoration: none;
 }
 
 /* ── Buttons ── */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: .9rem 2.25rem;
-  font-family: var(--sans); font-size: .78rem; font-weight: 500;
-  letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
-  border-radius: var(--radius-pill); cursor: pointer;
-  transition: all .3s; border: 1.5px solid transparent; white-space: nowrap;
+display: inline-flex; align-items: center; justify-content: center;
+padding: .9rem 2.25rem;
+font-family: var(--sans); font-size: .78rem; font-weight: 500;
+letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
+border-radius: var(--radius-pill); cursor: pointer;
+transition: all .3s; border: 1.5px solid transparent; white-space: nowrap;
 }
 .btn-primary {
-  background: var(--maroon); color: var(--cream); border-color: var(--maroon);
+background: var(--maroon); color: var(--cream); border-color: var(--maroon);
 }
 .btn-primary:hover {
-  background: transparent; color: var(--maroon);
+background: transparent; color: var(--maroon);
 }
 .btn-secondary {
-  background: transparent; color: var(--text-dark);
-  border-color: rgba(44,36,32,.3);
+background: transparent; color: var(--text-dark);
+border-color: rgba(44,36,32,.3);
 }
 .btn-secondary:hover { border-color: var(--text-dark); }
 
 /* ── Footer ── */
 footer {
-  background: var(--text-dark);
-  color: rgba(250,246,239,.7);
-  text-align: center;
-  padding: 4rem clamp(1.5rem, 5vw, 4rem);
+background: var(--text-dark);
+color: rgba(250,246,239,.7);
+text-align: center;
+padding: 4rem clamp(1.5rem, 5vw, 4rem);
 }
 .footer-names {
-  font-family: var(--display);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 400; color: var(--cream);
-  margin-bottom: .75rem;
-  font-style: normal;
+font-family: var(--display);
+font-size: clamp(1.8rem, 4vw, 2.5rem);
+font-weight: 400; color: var(--cream);
+margin-bottom: .75rem;
+font-style: normal;
 }
 .footer-date {
-  font-size: .8rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 2.5rem;
+font-size: .8rem; letter-spacing: .2em; text-transform: uppercase;
+color: var(--gold); margin-bottom: 2.5rem;
 }
 .footer-note {
-  font-size: .85rem; line-height: 1.8;
-  max-width: 440px; margin: 0 auto 2.5rem;
-  color: rgba(250,246,239,.55);
-  font-style: italic;
+font-size: .85rem; line-height: 1.8;
+max-width: 440px; margin: 0 auto 2.5rem;
+color: rgba(250,246,239,.55);
+font-style: italic;
 }
 .footer-links {
-  display: flex; justify-content: center;
-  gap: 2rem; list-style: none; margin-bottom: 3rem; flex-wrap: wrap;
+display: flex; justify-content: center;
+gap: 2rem; list-style: none; margin-bottom: 3rem; flex-wrap: wrap;
 }
 .footer-links a {
-  font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
-  color: rgba(250,246,239,.4); text-decoration: none; transition: color .25s;
+font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+color: rgba(250,246,239,.4); text-decoration: none; transition: color .25s;
 }
 .footer-links a:hover { color: var(--cream); }
 .footer-copy {
-  font-size: .7rem; color: rgba(250,246,239,.2); letter-spacing: .06em;
+font-size: .7rem; color: rgba(250,246,239,.2); letter-spacing: .06em;
 }
 
 /* ── Responsive ── */
 @media (max-width: 720px) {
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
+.nav-links { display: none; }
+.nav-hamburger { display: flex; }
 }
 
 /* ── Events page specific styles ── */
 .events-page-main {
-  position: relative;
-  padding: 10rem clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem);
-  overflow: hidden;
+position: relative;
+padding: 10rem clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem);
+overflow: hidden;
 }
 .events-leaf-decor {
-  position: absolute;
-  left: -2%;
-  top: calc(-3% + 64px);
-  width: clamp(250px, 28vw, 470px);
-  height: auto;
-  pointer-events: none;
-  z-index: 0;
-  mix-blend-mode: darken;
-  transform: none;
+position: absolute;
+left: -2%;
+top: calc(-3% + 64px);
+width: clamp(250px, 28vw, 470px);
+height: auto;
+pointer-events: none;
+z-index: 0;
+mix-blend-mode: darken;
+transform: none;
 }
 .events-page-inner {
-  max-width: 580px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  z-index: 1;
+max-width: 580px;
+margin: 0 auto;
+text-align: center;
+position: relative;
+z-index: 1;
 }
 .event-block {
-  margin-bottom: 0;
+margin-bottom: 0;
 }
 .event-block h2 {
-  font-family: var(--display);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 400;
-  font-style: normal;
-  color: var(--text-dark);
-  margin-bottom: .25rem;
+font-family: var(--display);
+font-size: clamp(2.5rem, 5vw, 3.5rem);
+font-weight: 400;
+font-style: normal;
+color: var(--text-dark);
+margin-bottom: .25rem;
 }
 .event-block .event-date {
-  font-family: var(--display);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  color: var(--gold-dark);
-  font-style: italic;
-  margin: .75rem 0;
+font-family: var(--display);
+font-size: clamp(1.1rem, 2vw, 1.4rem);
+color: var(--gold-dark);
+font-style: italic;
+margin: .75rem 0;
 }
 .event-block address {
-  font-style: normal;
-  font-size: .88rem;
-  color: var(--text-mid);
-  line-height: 1.7;
-  margin-top: .25rem;
+font-style: normal;
+font-size: .88rem;
+color: var(--text-mid);
+line-height: 1.7;
+margin-top: .25rem;
 }
 .event-block .map-link {
-  display: inline-flex;
-  align-items: center;
-  gap: .3rem;
-  font-size: .75rem;
-  letter-spacing: .08em;
-  color: var(--green-deep);
-  text-decoration: none;
-  margin-top: .75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: opacity .2s;
+display: inline-flex;
+align-items: center;
+gap: .3rem;
+font-size: .75rem;
+letter-spacing: .08em;
+color: var(--green-deep);
+text-decoration: none;
+margin-top: .75rem;
+font-weight: 500;
+text-transform: uppercase;
+transition: opacity .2s;
 }
 .event-block .map-link:hover { opacity: .7; }
 .event-block .event-desc {
-  color: var(--text-mid);
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-top: 1.5rem;
-  text-align: center;
+color: var(--text-mid);
+font-size: 1rem;
+line-height: 1.8;
+margin-top: 1.5rem;
+text-align: center;
 }
 .what-to-wear {
-  margin-top: 2rem;
+margin-top: 2rem;
 }
 .what-to-wear .caption {
-  margin-bottom: .75rem;
+margin-bottom: .75rem;
 }
 .what-to-wear p {
+color: var(--text-mid);
+font-size: 1rem;
+line-height: 1.8;
+text-align: center;
+}
+.events-section-divider {
+width: 60px;
+height: 1px;
+background: linear-gradient(90deg, transparent, var(--gold), transparent);
+margin: clamp(3rem, 6vw, 5rem) auto;
+}
+
+.gift-section {
+  background: #FFFDF7;
+  text-align: center;
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem);
+}
+.gift-content {
+  max-width: 580px;
+  margin: 0 auto;
+}
+.gift-content .gift-desc {
   color: var(--text-mid);
   font-size: 1rem;
   line-height: 1.8;
-  text-align: center;
+  margin-top: 1rem;
 }
-.events-section-divider {
-  width: 60px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: clamp(3rem, 6vw, 5rem) auto;
+.gift-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
-
+.gift-buttons .btn {
+  min-width: 166px;
+}
+.upi-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--text-dark);
+  color: var(--cream);
+  padding: .75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+  z-index: 200;
+  opacity: 0;
+  transition: transform .4s ease, opacity .4s ease;
+  pointer-events: none;
+}
+.upi-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
 
 
 @media (max-width: 720px) {
-  .events-leaf-decor {
-    width: 200px;
-    top: 0;
-    left: -5%;
+.events-leaf-decor {
+width: 200px;
+top: 0;
+left: -5%;
+}
+  .gift-buttons {
+    flex-direction: column;
+    align-items: center;
   }
 
 }
@@ -338,97 +388,100 @@ footer {
 
 <!-- ── Navbar ── -->
 <nav class="navbar" id="navbar">
-  <a href="index.html" class="nav-logo">
-    <span class="nav-logo-s">S</span>
-    <span class="nav-logo-amp">&amp;</span>
-    <span class="nav-logo-p">P</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="events.html">Events</a></li>
-    <li><a href="index.html#countdown">Countdown</a></li>
-    <li><a href="index.html#rsvp">RSVP</a></li>
-  </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+<a href="index.html" class="nav-logo">
+<span class="nav-logo-s">S</span>
+<span class="nav-logo-amp">&amp;</span>
+<span class="nav-logo-p">P</span>
+</a>
+<ul class="nav-links">
+<li><a href="events.html">Events</a></li>
+<li><a href="index.html#countdown">Countdown</a></li>
+<li><a href="index.html#rsvp">RSVP</a></li>
+</ul>
+<button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile-overlay" id="mobileNav">
-  <a href="events.html" onclick="closeMobileNav()">Events</a>
-  <a href="index.html#countdown" onclick="closeMobileNav()">Countdown</a>
-  <a href="index.html#rsvp" onclick="closeMobileNav()">RSVP</a>
+<a href="events.html" onclick="closeMobileNav()">Events</a>
+<a href="index.html#countdown" onclick="closeMobileNav()">Countdown</a>
+<a href="index.html#rsvp" onclick="closeMobileNav()">RSVP</a>
 </div>
 
 <!-- ── Events Main Content ── -->
 <section class="events-page-main">
-  <!-- Leaf decoration (left side) -->
-  <img src="assets/leaf-decor.png" class="events-leaf-decor" alt="" aria-hidden="true">
+<!-- Leaf decoration (left side) -->
+<img src="assets/leaf-decor.png" class="events-leaf-decor" alt="" aria-hidden="true">
 
-  <div class="events-page-inner">
+<div class="events-page-inner">
 
-    <!-- ── Kalyanam ── -->
-    <div class="event-block fade-up">
-      <p class="caption">Join us for</p>
-      <div class="divider"></div>
-      <h2>Kalyanam</h2>
-      <p class="event-date">24th October, 2026</p>
-      <address>
-        Krishnakripa Kalyana Mandapam<br>
-        Vadakara, Kerala
-      </address>
-      <a href="https://maps.google.com/?q=Krishnakripa+Kalyana+Mandapam+Vadakara" target="_blank" class="map-link">
-        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.2 1 3 3.2 3 6 3 9.8 8 15 8 15s5-5.2 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z" fill="currentColor"/></svg>
-        View on map
-      </a>
-      <p class="event-desc">Join us for our special moment as we tie the knot amidst the rhythm of traditional percussion and the fragrance of jasmines. Afterwards, we invite your taste buds to a grand Kerala Sadhya — a festive vegetarian feast served on a banana leaf.</p>
+<!-- ── Kalyanam ── -->
+<div class="event-block fade-up">
+<p class="caption">Join us for</p>
+<div class="divider"></div>
+<h2>Kalyanam</h2>
+<p class="event-date">24th October, 2026</p>
+<address>
+Krishnakripa Kalyana Mandapam<br>
+Vadakara, Kerala
+</address>
+<a href="https://maps.google.com/?q=Krishnakripa+Kalyana+Mandapam+Vadakara" target="_blank" class="map-link">
+<svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.2 1 3 3.2 3 6 3 9.8 8 15 8 15s5-5.2 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z" fill="currentColor"/></svg>
+View on map
+</a>
+<p class="event-desc">Join us for our special moment as we tie the knot amidst the rhythm of traditional percussion and the fragrance of jasmines. Afterwards, we invite your taste buds to a grand Kerala Sadhya — a festive vegetarian feast served on a banana leaf.</p>
 
-      <div class="what-to-wear fade-up">
-        <p class="caption">What to wear</p>
-        <p>Find your comfort in traditional Indian attire or festive wear. Think <em>sarees</em>, <em>pattar namaz</em>, <em>lehengas</em>, or Indo-Western fusion for the ladies, and <em>kurta/shirts</em> with <em>mundu/dhoti/trousers</em> for the men.</p>
-      </div>
-    </div>
+<div class="what-to-wear fade-up">
+<p class="caption">What to wear</p>
+<p>Find your comfort in traditional Indian attire or festive wear. Think <em>sarees</em>, <em>pattar namaz</em>, <em>lehengas</em>, or Indo-Western fusion for the ladies, and <em>kurta/shirts</em> with <em>mundu/dhoti/trousers</em> for the men.</p>
+</div>
+</div>
 
-    <!-- Divider -->
-    <div class="events-section-divider"></div>
+<!-- Divider -->
+<div class="events-section-divider"></div>
 
-    <!-- ── Reception ── -->
-    <div class="event-block fade-up">
-      <h2>Reception</h2>
-      <p class="event-date">25th October, 2026</p>
-      <address>
-        Mascot Beach Resort<br>
-        Kannur, Kerala
-      </address>
-      <a href="https://maps.app.goo.gl/yyznt61GRwa8fZTb8" target="_blank" class="map-link">
-        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.2 1 3 3.2 3 6 3 9.8 8 15 8 15s5-5.2 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z" fill="currentColor"/></svg>
-        View on map
-      </a>
-      <p class="event-desc">As the sun sets over the Arabian Sea, we will gather to continue the celebrations in a relaxed and joyful atmosphere. Expect a night filled with wonderful conversations, plenty of photographs, a delicious buffet and great music. And of course, beautiful memories to take home.</p>
+<!-- ── Reception ── -->
+<div class="event-block fade-up">
+<h2>Reception</h2>
+<p class="event-date">25th October, 2026</p>
+<address>
+Mascot Beach Resort<br>
+Kannur, Kerala
+</address>
+<a href="https://maps.app.goo.gl/yyznt61GRwa8fZTb8" target="_blank" class="map-link">
+<svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.2 1 3 3.2 3 6 3 9.8 8 15 8 15s5-5.2 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z" fill="currentColor"/></svg>
+View on map
+</a>
+<p class="event-desc">As the sun sets over the Arabian Sea, we will gather to continue the celebrations in a relaxed and joyful atmosphere. Expect a night filled with wonderful conversations, plenty of photographs, a delicious buffet and great music. And of course, beautiful memories to take home.</p>
 
-      <div class="what-to-wear fade-up">
-        <p class="caption">What to wear</p>
-        <p>For an evening by the sea, bring your dazzling best. Think <em>sarees</em>, dresses, gowns, or <em>lehengas</em> for the ladies and suits, <em>sherwanis</em> or smart casuals for the men.</p>
-      </div>
-    </div>
+<div class="what-to-wear fade-up">
+<p class="caption">What to wear</p>
+<p>For an evening by the sea, bring your dazzling best. Think <em>sarees</em>, dresses, gowns, or <em>lehengas</em> for the ladies and suits, <em>sherwanis</em> or smart casuals for the men.</p>
+</div>
+</div>
 
-  </div>
+</div>
 </section>
 
 
+<!-- UPI Toast -->
+<div class="upi-toast" id="upi-toast">UPI ID copied to clipboard!</div>
+
 <!-- ── Footer ── -->
 <footer>
-  <p class="footer-names">Sredha &amp; Pranav</p>
-  <p class="footer-date">24 · 10 · 2026 &nbsp;—&nbsp; Kerala</p>
-  <p class="footer-note">"Like the parakeet that returns to its branch each dusk, so does the heart find its home in those it loves."</p>
-  <ul class="footer-links">
-    <li><a href="events.html">Events</a></li>
-    <li><a href="index.html#rsvp">RSVP</a></li>
-  </ul>
-  <p class="footer-copy">Crafted with love &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; 2026</p>
+<p class="footer-names">Sredha &amp; Pranav</p>
+<p class="footer-date">24 · 10 · 2026 &nbsp;—&nbsp; Kerala</p>
+<p class="footer-note">"Like the parakeet that returns to its branch each dusk, so does the heart find its home in those it loves."</p>
+<ul class="footer-links">
+<li><a href="events.html">Events</a></li>
+<li><a href="index.html#rsvp">RSVP</a></li>
+</ul>
+<p class="footer-copy">Crafted with love &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; 2026</p>
 </footer>
 
 <script>
 /* Navbar scroll */
 window.addEventListener('scroll', () => {
-  document.getElementById('navbar')
-    .classList.toggle('scrolled', window.scrollY > 30);
+document.getElementById('navbar')
+.classList.toggle('scrolled', window.scrollY > 30);
 });
 
 /* Mobile nav */
@@ -437,29 +490,39 @@ const mobileNav = document.getElementById('mobileNav');
 let navOpen = false;
 
 hamburger.addEventListener('click', () => {
-  navOpen = !navOpen;
-  mobileNav.classList.toggle('open', navOpen);
-  document.body.style.overflow = navOpen ? 'hidden' : '';
+navOpen = !navOpen;
+mobileNav.classList.toggle('open', navOpen);
+document.body.style.overflow = navOpen ? 'hidden' : '';
 });
 
 window.closeMobileNav = function () {
-  navOpen = false;
-  mobileNav.classList.remove('open');
-  document.body.style.overflow = '';
+navOpen = false;
+mobileNav.classList.remove('open');
+document.body.style.overflow = '';
 };
 
 /* Scroll animation */
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+/* Copy UPI ID */
+window.copyUPI = function () {
+  const upiId = 'sredhapavithran.mec@okaxis';
+  navigator.clipboard.writeText(upiId).then(() => {
+    const toast = document.getElementById('upi-toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+  }).catch(() => {
+    prompt('Copy this UPI ID:', upiId);
+  });
 };
 </script>
 
